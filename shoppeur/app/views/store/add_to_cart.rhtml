@@ -1,0 +1,19 @@
+<div class="cart-title">Votre panier</div>
+
+<table class="tablecart">
+  <tr class="tabletitle">
+    <td colspan="2">Quantités</td>
+    <td>Produits</td>
+    <td colspan="2">Prix</td>
+  </tr>
+  <%= render(:partial => "cart_item", :collection => @cart.items) %>
+  <tr class="total-line">
+    <td colspan="2">Total</td>
+    <td></td>
+    <td class="total-cell" colspan="2"><%= number_to_currency(@cart.total_price, :unit => "$") %></td>
+  </tr>
+</table>
+
+<%= button_to "Payer", :action => :checkout %>
+<%= button_to "Continuer vos achats", :action => :index %>
+<%= button_to "Vider le panier", :action => :empty_cart %>

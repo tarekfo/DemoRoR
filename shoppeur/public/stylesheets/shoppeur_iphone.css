@@ -1,0 +1,75 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: yellow;
+}
+
+#banner {
+  
+  border-bottom: 2px solid;
+  height: 40px;
+}
+#banner img{
+  float: left;
+  height: 80px;
+}
+.h1{
+   font: 8px;
+   font-family: sans-serif;
+   color: #282;
+}
+#columns {
+  background: red;
+}
+
+#main {
+  background: white;
+}
+
+#side {
+  background: red;
+}
+
+#side a {
+  color: yellow;
+  font-size: 12px;
+}
+
+#side a hover {
+    color: orange;
+    
+}
+
+h1 {
+  color: #226;
+}
+
+.catalogentry {
+    border-bottom: 1px dotted #77d;
+}
+
+.catalogentry img {
+  width: 140px;
+}
+
+.catalogentry h3 {
+    font-family: arial;
+    color: #227;
+}
+.catalogentry p {
+
+ color: #227;
+}
+
+.catalogentry .add-to-cart {
+  position: relative;
+}
+
+.catalogprice {
+  color: #44a;
+  font-weight: bold;
+}

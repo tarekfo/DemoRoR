@@ -1,0 +1,13 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% for column in Product.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @product.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @product %> |
+<%= link_to 'Back', :action => 'list' %>

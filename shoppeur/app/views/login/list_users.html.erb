@@ -1,0 +1,13 @@
+<% @page_title = "Liste des utilisateurs" %>
+<table>
+  <% for user in @all_users %>
+  <tr>
+    <td>
+      <%= user.name %>
+    </td>
+    <td>
+      <%= link_to "Supprimer", :action => 'delete_user', :id => user.id %>
+    </td>
+  </tr>
+  <% end %>
+</table>

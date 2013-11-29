@@ -1,0 +1,19 @@
+<div id="home">
+    <div class="toolbar">
+       <h1>Shopping</h1>
+       <a target="_webapp" href="../store/index" class="back flip">Back</a>
+    </div>
+    <ul class="metal">
+      <% for product in @products %>
+      <li class="arrow">
+        <a target="_webapp" href="../store/add_to_cart/<%= product.id %>">
+          <small>
+            <img src="<%= product.image_url %>"></img>
+          </small>
+          <em><%=h product.title %></em>
+          <%= sprintf("$%0.2f", product.price) %>
+        </a>
+      </li>
+  <% end %>
+    </ul>
+</div>

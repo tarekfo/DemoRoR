@@ -1,0 +1,16 @@
+<h1>Le cata. la cata, le catalogue</h1>
+
+<% for product in @products -%>
+  <div class="entry">
+    <img src="<%= product.image_url %>"/>
+    <div id="titlecart">
+      <h3><%= h(product.title) %></h3>
+      <%= link_to image_tag ("cart.png"),:action => :add_to_cart , :id => product %>
+    </div>
+    <span class="price"><%= number_to_currency(product.price, :unit => '$') %></span>
+    <span class="description">
+      <%= product.description %>
+    </span>
+  </div>
+<% end %>
+> product

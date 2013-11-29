@@ -1,0 +1,24 @@
+<% @page_title = "Ajouter un utilisateur" %>
+<%= error_messages_for 'user' %>
+<% form_tag do %>
+<table>
+  <tr>
+    <td>Nom de l'utilisateur:</td>
+    <td>
+      <%= text_field "user", "name" %>
+    </td>
+  </tr>
+  <tr>
+    <td>Mot de passe:</td>
+    <td>
+      <%= password_field "user", "password" %>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <%= submit_tag "Ajouter utilisateur" %>
+    </td>
+  </tr>
+</table>
+<% end %>

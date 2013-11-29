@@ -1,0 +1,34 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<html>
+<head>
+  <title>Admin: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold', 'depot', 'admin' %>
+</head>
+<body>
+  <div id="banner">
+    <%= @page_title || "Administrer le shoppeur" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <% if session[:user_id] %>
+        <%= link_to "Produits", :controller => 'admin', :action => 'list' %><br/>
+        <%= link_to "Expéditions", :controller => 'admin' ,:action => 'ship' %><br/>
+        <%= link_to "Ajouter un utilisateur", :controller => 'login' ,:action => 'add_user' %><br/>
+        <%= link_to "Liste des utilisateurs", :controller => 'login' ,:action => 'list_users' %><br/>
+        <%= link_to "Se déconnecter", :controller => 'login' ,:action => 'logout' %><br/>
+      <% end %>
+    </div>
+    <div id="main">
+      <div id="main">
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+      <%= yield :layout %>
+    </div>
+  </div>
+</body>
+</html>

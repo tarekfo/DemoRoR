@@ -1,0 +1,11 @@
+<% for product in @products %>
+  <div class="catalogentry">
+    <img src="<%= product.image_url %>"></img>
+    <h3><%=h product.title %></h3>
+    <p><%= product.description %></p>
+    <span class="catalogprice"><%= sprintf("$%0.2f", product.price) %></span>
+    <%= link_to "Ajouter au panier", {:action => 'add_to_cart', :id => product}, :class => 'addtocart' %>
+    <br />
+  </div>
+  <div class="separator">&nbsp;</div>
+  <% end %>

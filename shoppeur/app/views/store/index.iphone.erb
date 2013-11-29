@@ -1,0 +1,52 @@
+
+<div id="home" class="current">
+    <div class="toolbar">
+        <h1>Le shoppeur</h1>
+        <a class="button" id="infoButton" href="#about">About</a>
+    </div>
+    <ul class="rounded">
+      <li class="arrow"><a target="_webapp" href="../store/shopping" class="flip">Shopping</a> <small class="counter"><%= @products.size %></small></li>
+        <li class="arrow"><a href="#questions" class="cube">Questions</a></li>
+        <li class="arrow"><a href="#ajax">Annonces</a> <small class="counter">3</small></li>
+        <li class="arrow"><a href="#callbacks">Contact</a> <small class="counter">3</small></li>
+    </ul>
+</div>
+<div id="about" class="selectable">
+    <p><strong>Le shoppeur</strong><br />Version 1.0 beta<br />
+    <a href="http://www.piknicelectronik.com">By Abderrazik Tarek</a></p>
+        <p><em>Développpement d'une boutique en ligne<br /> En vue de la préparation du nouveau</em></p>
+        <p>
+            <a href="http://www.piknicelectronik.com" target="www.piknicelectronik.com">Piknic Electronik</a>
+        </p>
+        <p><br /><br /><a href="#" class="grayButton goback">Close</a></p>
+</div>
+<form id="questions">
+    <div class="toolbar">
+        <h1>Questions</h1>
+        <a class="back" href="#">Home</a>
+    </div>
+    <ul class="rounded">
+        <li><input type="text" name="Question" value="" placeholder="Questions" /></li>
+    </ul>
+    <a style="margin:0 10px;color:rgba(0,0,0,.9)" href="#" class="submit whiteButton">Envoyer</a>
+</form>
+
+<div id="shopping">
+    <div class="toolbar">
+       <h1>Shopping</h1>
+       <a href="#" class="back flip">Back</a>
+    </div>
+    <ul class="metal">
+      <% for product in @products %>
+      <li class="arrow">
+        <a target="_webapp" href="../store/add_to_cart/<%= product.id %>">
+          <small>
+            <img src="<%= product.image_url %>"></img>
+          </small>
+          <em><%=h product.title %></em>
+          <%= sprintf("$%0.2f", product.price) %>
+        </a>
+      </li>
+  <% end %>
+    </ul>
+</div>

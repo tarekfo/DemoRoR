@@ -1,0 +1,33 @@
+<h1>Liste des produits</h1>
+
+
+<table cellpadding="5" cellspacing="0">
+  <%
+  odd_or_even = 0
+  for product in @products
+    odd_or_even = 1 - odd_or_even
+  %>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+    <td>
+      <img width="60" height="70" src="<%= product.image_url %>" />
+    </td>
+    <td width="60%">
+      <span class="ListTitle"><%= h(product.title) %></span><br />
+      <%= h(truncate(product.description, 80)) %>
+    </td>
+    <td align="right">
+      <%= product.date_available %><br />
+      <strong><%= sprintf("%0.2f", product.price) %></strong>
+    </td>
+    <td class="ListAction">
+      <%= link_to 'Afficher', :action => 'show', :id => product %><br />
+      <%= link_to 'Editer', :action => 'edit', :id => product %><br />
+      <%= link_to 'Supprimer', :action => 'destroy', :id => product,:confirm => 'Etes vous certain?'%>
+    </td>
+  </tr>
+  <% end %>
+</table>
+ <%= will_paginate(@products) %>
+<br />
+
+<%= link_to 'Nouveau produit', :action => "new" %>

@@ -1,0 +1,27 @@
+
+<div id="home">
+  <div class="toolbar">
+     <h1>Panier</h1>
+     <a target="_webapp" href="../shopping" class="back flip">Back</a>
+  </div>
+  <ul class="metal">
+    <% for cart_item in @cart.items %>
+    <li class="simplelist">
+        <h4><%= cart_item.quantity %></h4>
+        <p><%= h(cart_item.title) %></p>
+        <%= cart_item.product.price %>
+        <small><%= cart_item.price %></small>
+      </li>
+    <% end %>
+      <li>
+        <p>Total</p>
+        <small><%= @cart.total_price %></small>
+      </li>
+</ul>
+  <br/>
+<ul class="edgetoedge">
+  <li class="arrow"><a target="_webapp" class="cube" href="../shopping">Continuer vos achats</a></li>
+  <li class="arrow"><a target="_webapp" class="cube" href="../shopping" >Vider le panier</a></li>
+  <li class="arrow"><a>Passer la commande</a></li>
+</ul>
+</div>

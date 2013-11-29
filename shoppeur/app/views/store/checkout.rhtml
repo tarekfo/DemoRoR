@@ -1,0 +1,36 @@
+<div class="depot-form">
+  
+  <%= error_messages_for 'order' %>
+  
+  <fieldset>
+    <legend>Veuillez entrer vos coordonnées</legend>
+
+    <% form_for :order, :url => { :action => :save_order } do |form| %>
+      <p>
+        <label for="order_name">Nom:</label>
+        <%= form.text_field :name, :size => 40 %>
+      </p>
+
+      <p>
+        <label for="order_address">Adresse:</label>
+        <%= form.text_area :address, :rows => 3, :cols => 40 %>
+      </p>
+
+      <p>
+        <label for="order_email">E-Mail:</label>
+        <%= form.text_field :email, :size => 40 %>
+      </p>
+
+      <p>
+        <label for="order_pay_type">Régler avec:</label>
+        <%=
+          form.select :pay_type,
+                       Order::PAYMENT_TYPES, 
+                      :prompt => "Sélectionner un type de réglement"
+        %>
+      </p>
+    
+      <%= submit_tag "Commander", :class => "submit" %>
+    <% end %>  
+  </fieldset>
+</div>

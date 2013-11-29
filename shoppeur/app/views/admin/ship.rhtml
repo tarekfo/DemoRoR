@@ -1,0 +1,8 @@
+<h1>Commandes à expédier</h1>
+<%  form_tag :action => 'ship' do %>
+  <table cellpadding="5" cellspacing="0">
+    <%=  render :partial => 'order_line', :collection =>@pending_orders %>
+  </table>
+  <br/>
+  <%= submit_tag  'Expédier les commandes sélectionnées' %>
+<% end %>

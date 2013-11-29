@@ -1,0 +1,143 @@
+/* Global styles */
+
+body {
+    margin-left: 15%;
+    margin-right: 7%;
+    background-color: yellow;
+}
+
+#banner {
+  background: orange;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  height: 140;
+}
+#banner img{
+  float: left;
+  height: 150;
+}
+#banner h1{
+   font: small-caps 40px/40px "Times New Roman", serif;
+   text-align: center;
+   color: #282;
+}
+#columns {
+  background: red;
+}
+
+#main {
+  margin-left: 10em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+#notice {
+    border: solid 2px red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller sans-serif;
+}
+
+#side {
+  float: left;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  width: 6em;
+  background: red;
+}
+
+#side a {
+  color: yellow;
+  font-size: medium;
+}
+
+#side a:hover {
+    color: orange;
+    font-size: small;
+}
+
+h1 {
+  font:  150% sans-serif;
+  color: #226;
+}
+
+/* And entry in the store catalog */
+
+.catalogentry {
+    margin-bottom: 2em;
+    border-bottom: 1px dotted #77d;
+    padding-bottom: 100px;
+    padding-top: 40px;
+}
+
+.catalogentry img {
+  width: 100px;
+  float: left;
+  border: gray medium ridge;
+  padding: 1em;
+}
+
+.catalogentry h3 {
+    font-family: Tahoma;
+    font-variant: small-caps;
+    font-size: x-large;
+    margin-bottom: 1em;
+    margin-left: 7em;
+    color: #227;
+}
+.catalogentry p {
+ 
+ margin-left: 10em;
+ color: #227;
+}
+
+.catalogentry .add-to-cart {
+  position: relative;
+}
+
+.catalogprice {
+  color: #44a;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 2em;
+  margin-right: 1em;
+}
+.carttitle {
+    background: #282;
+    color: #dfd;
+    font: smaller bold sans-serif;
+    text-align: center;
+}
+.carttitle td{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.totalcell {
+  font-weight: bold;
+  border-top: 1px solid #282;
+  border-bottom: 2px solid #282;
+}
+#cartmenu{
+    float: right;
+    border-left: 1px dotted #282;
+    list-style: none;
+}
+.separator {
+  border-bottom: 1px solid #282;
+  clear: both;
+}
+a.addtocart {
+    color: #000;
+    background: #eec;
+}
+a.addtocart:hover{
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #141;
+    background: #cec;
+    font-weight: bold;
+ }
